@@ -17,14 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VM6-Wq-mcb">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VM6-Wq-mcb">
                             <size key="itemSize" width="155" height="196"/>
+                            <size key="estimatedItemSize" width="155" height="196"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HbF-tW-rfk" customClass="PlanetCollectionViewCell" customModule="Planets" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlanetCell" id="HbF-tW-rfk" customClass="PlanetCollectionViewCell" customModule="Planets" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jZK-LL-z8c">
@@ -35,6 +36,7 @@
                                             <rect key="frame" x="14" y="8" width="122" height="122"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="fVX-2U-Anf" secondAttribute="height" multiplier="1:1" id="HO2-nr-boz"/>
+                                                <constraint firstAttribute="height" constant="122" id="PfP-Kk-aiB"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acI-eI-lhW">
@@ -88,6 +90,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Juv-NA-OZG">
                                 <rect key="frame" x="357" y="44" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="done:" destination="zDw-S3-G9e" eventType="touchUpInside" id="ye6-Kj-Hup"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gJL-2i-v1t">
                                 <rect key="frame" x="20" y="86" width="374" height="31"/>
@@ -126,49 +131,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gW3-s0-mLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2820" y="-706"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="SlX-tF-Q3x">
-            <objects>
-                <viewController id="MVM-9E-N3Y" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wmm-q9-xfV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PcH-no-zL3">
-                                <rect key="frame" x="357" y="44" width="37" height="30"/>
-                                <state key="normal" title="Done"/>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Efp-IK-qBO">
-                                <rect key="frame" x="20" y="87" width="374" height="31"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Should Pluto be a planet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TA3-eV-iRE">
-                                        <rect key="frame" x="0.0" y="0.0" width="317" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqf-Nt-Yh6">
-                                        <rect key="frame" x="325" y="0.0" width="51" height="31"/>
-                                    </switch>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="Efp-IK-qBO" firstAttribute="leading" secondItem="4Q4-bS-6CS" secondAttribute="leading" constant="20" id="BZC-FD-RB9"/>
-                            <constraint firstItem="4Q4-bS-6CS" firstAttribute="trailing" secondItem="Efp-IK-qBO" secondAttribute="trailing" constant="20" id="ISN-K3-Ydp"/>
-                            <constraint firstItem="PcH-no-zL3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4Q4-bS-6CS" secondAttribute="leading" constant="20" id="Kq7-w8-uv2"/>
-                            <constraint firstItem="Efp-IK-qBO" firstAttribute="top" secondItem="PcH-no-zL3" secondAttribute="bottom" constant="13" id="S91-gn-KbC"/>
-                            <constraint firstItem="4Q4-bS-6CS" firstAttribute="trailing" secondItem="PcH-no-zL3" secondAttribute="trailing" constant="20" id="XKl-9D-pal"/>
-                            <constraint firstItem="PcH-no-zL3" firstAttribute="top" secondItem="4Q4-bS-6CS" secondAttribute="top" id="xb0-Hx-KUr"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="4Q4-bS-6CS"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bms-S6-kNe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3610" y="-328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dqQ-oU-x3Q">

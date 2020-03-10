@@ -8,14 +8,27 @@
 
 import UIKit
 
+extension String {
+    static var shouldShowPlutoKey = "ShouldShowPluto"
+}
+
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var shouldPlutoSwitch: UISwitch!
+    
     @IBAction func changeShouldShowPluto(_ sender: UISwitch) {
+        let shouldShowPluto = shouldPlutoSwitch.isOn
+        UserDefaults.standard.set(shouldShowPluto, forKey: .shouldShowPlutoKey)
     }
-    @IBOutlet weak var doneButton: UIButton!
     
+    @IBAction func done(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
+    func updateViews() {
+        let shouldShowPluto = UserDefaults.standard.bool(forKey: .shouldShowPlutoKey)
+        shouldPlutoSwitch.isOn = shouldShowPluto
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

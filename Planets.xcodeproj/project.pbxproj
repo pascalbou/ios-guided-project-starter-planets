@@ -46,6 +46,7 @@
 		27F670EB21EFC6AA0035C1BF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3FF7F7262417D66700A52ADB /* PlanetCollectionViewCell.swift */,
 				3FF7F7242417D63500A52ADB /* SettingsViewController.swift */,
 				3FF7F7222417D61300A52ADB /* PlanetsCollectionViewController.swift */,
 			);
@@ -55,7 +56,6 @@
 		3FF7F7282417D67500A52ADB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3FF7F7262417D66700A52ADB /* PlanetCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
